@@ -6,7 +6,17 @@ WarGames-inspired MeshCore planning tool. Runs as a dependency-free Cloudflare W
 
 This repository contains the application source. The live app is hosted by Sites on Cloudflare Workers. GitHub Actions builds and tests changes to `main`; it does not automatically publish to Sites. GitHub Pages alone cannot run the `/api/nodes` and `/api/elevation` backend routes.
 
-Run `npm run build`, `npm test`, then `npm run dev` for a local preview on port 8765. No install is needed. Edit `web/` and `worker/api.mjs`; `dist/server/index.js` is generated.
+Run `npm run build`, `npm test`, then `npm run dev` for a local web preview on port 8765. The web build needs no dependencies. Edit `web/` and `worker/api.mjs`; `dist/server/index.js` is generated.
+
+## Windows desktop
+
+The desktop app bundles the web interface and API backend in Electron. It serves them through an internal `pointbreak://app` protocol without opening a localhost port or depending on the Sites deployment. Internet is still required for the public node feed, elevations, map tiles and optional web fonts. The renderer has Node integration disabled, context isolation and sandboxing enabled, denied device permissions, and external HTTPS links open in the system browser.
+
+For development: `npm ci`, then `npm run desktop`. Build the Windows x64 installer and portable executable with `npm run desktop:pack`; outputs are in `release/`. These builds are unsigned. The installer supports a per-user installation, a chosen installation directory, and Start menu/desktop shortcuts. The portable executable runs without installation.
+
+GitHub Actions → **Windows desktop** produces a **Point-Break-Windows-x64** artifact containing both executables. Builds run on changes to the application or can be started with **Run workflow**. Artifact downloads require repository access and are retained for 30 days. The separate **Build and test** workflow checks the web/backend model.
+
+The desktop app preserves its window bounds and CRT preference locally. Observation imports remain session-only. Use **File → Export analysis…** or Ctrl+E to save a report with native download handling.
 
 ## Data and model
 

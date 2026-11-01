@@ -1,1 +1,29 @@
-{"name":"point-break","version":"0.3.0","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node scripts/test.mjs","dev":"node scripts/preview.mjs"}}
+{
+  "name": "point-break",
+  "productName": "Point Break",
+  "version": "0.4.0",
+  "description": "Strategic Mesh Command — MeshCore repeater planning and terrain screening",
+  "author": "njsnowman",
+  "private": true,
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "dev": "node scripts/preview.mjs",
+    "desktop": "node scripts/build.mjs && electron .",
+    "desktop:pack": "node scripts/build.mjs && electron-builder --win nsis portable --x64 --publish never",
+    "desktop:unpacked": "node scripts/build.mjs && electron-builder --win --x64 --dir --publish never"
+  },
+  "devDependencies": {"electron": "45.2.1", "electron-builder": "26.18.0"},
+  "build": {
+    "appId": "net.pointbreak.mesh",
+    "productName": "Point Break",
+    "asar": true,
+    "directories": {"output": "release"},
+    "files": ["desktop/**", "dist/server/index.js", "web/vendor/LEAFLET-LICENSE", "package.json"],
+    "win": {"target": ["nsis", "portable"], "icon": "desktop/icon.ico", "signAndEditExecutable": false},
+    "nsis": {"oneClick": false, "perMachine": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true, "artifactName": "Point-Break-Setup-${version}-${arch}.${ext}"},
+    "portable": {"artifactName": "Point-Break-Portable-${version}-${arch}.${ext}"}
+  }
+}

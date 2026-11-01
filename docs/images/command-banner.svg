@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="380" viewBox="0 0 1600 380" role="img" aria-labelledby="title desc">
+  <title id="title">Point Break — Strategic Mesh Command</title>
+  <desc id="desc">A green phosphor mesh network display with connected repeater nodes, radar rings, and a proposed amber bridge.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#82d47c" stroke-opacity=".09" stroke-width="1"/></pattern>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07130c"/><stop offset=".55" stop-color="#091b11"/><stop offset="1" stop-color="#030805"/></linearGradient>
+    <linearGradient id="beam" x2="1"><stop stop-color="#8fef86" stop-opacity=".3"/><stop offset="1" stop-color="#8fef86" stop-opacity="0"/></linearGradient>
+    <filter id="glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="380" rx="22" fill="url(#bg)"/>
+  <rect width="1600" height="380" rx="22" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1598" height="378" rx="21" fill="none" stroke="#82d47c" stroke-opacity=".38"/>
+  <path d="M0 304H1600" stroke="#82d47c" stroke-opacity=".22"/>
+  <path d="M1090 70a172 172 0 0 1 290 126" fill="none" stroke="#82d47c" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M1120 80a132 132 0 0 1 225 103" fill="none" stroke="#82d47c" stroke-opacity=".2" stroke-width="2"/>
+  <path d="M1155 95a92 92 0 0 1 160 73" fill="none" stroke="#82d47c" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M1188 108a54 54 0 0 1 96 46" fill="none" stroke="#82d47c" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M1128 235L1196 173L1260 204L1345 121L1430 166L1518 95" fill="none" stroke="#8fef86" stroke-opacity=".38" stroke-width="2" stroke-dasharray="5 10"/>
+  <path d="M1260 204L1345 121" fill="none" stroke="#ffbd58" stroke-width="3" stroke-dasharray="8 7" filter="url(#glow)"/>
+  <path d="M1140 225L1208 160L1270 192L1355 109L1440 154L1528 83" fill="url(#beam)" opacity=".25"/>
+  <g fill="#a4ff90" stroke="#0a1a0f" stroke-width="4" filter="url(#glow)">
+    <circle cx="1128" cy="235" r="8"/><circle cx="1196" cy="173" r="8"/><circle cx="1260" cy="204" r="8"/><circle cx="1345" cy="121" r="8"/><circle cx="1430" cy="166" r="8"/><circle cx="1518" cy="95" r="8"/>
+  </g>
+  <circle cx="1302" cy="162" r="18" fill="none" stroke="#ffbd58" stroke-opacity=".7"/>
+  <circle cx="1302" cy="162" r="30" fill="none" stroke="#ffbd58" stroke-opacity=".26"/>
+  <text x="84" y="95" fill="#94e989" font-family="Consolas, monospace" font-size="16" letter-spacing="5">POINT BREAK / STRATEGIC MESH COMMAND</text>
+  <text x="80" y="188" fill="#d0ffb0" font-family="Arial, sans-serif" font-weight="700" font-size="68" letter-spacing="2">SHALL WE CONNECT</text>
+  <text x="80" y="260" fill="#d0ffb0" font-family="Arial, sans-serif" font-weight="700" font-size="68" letter-spacing="2">THE NETWORK<tspan fill="#9cf088">_</tspan></text>
+  <text x="84" y="347" fill="#9db69c" font-family="Consolas, monospace" font-size="15" letter-spacing="3">PUBLIC REPEATER DATA  ·  TERRAIN SCREENING  ·  EVIDENCE FIRST</text>
+  <text x="1140" y="347" fill="#ffcb73" font-family="Consolas, monospace" font-size="13" letter-spacing="2">POSSIBLE BRIDGE // UNVERIFIED</text>
+</svg>
+

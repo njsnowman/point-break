@@ -1,29 +1,77 @@
+<p align="center">
+  <img src="docs/images/command-banner.svg" alt="Point Break — Strategic Mesh Command" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/njsnowman/point-break/actions/workflows/ci.yml"><img src="https://github.com/njsnowman/point-break/actions/workflows/ci.yml/badge.svg?branch=main" alt="Build and test"></a>
+  <a href="https://github.com/njsnowman/point-break/actions/workflows/desktop.yml"><img src="https://github.com/njsnowman/point-break/actions/workflows/desktop.yml/badge.svg?branch=main" alt="Windows desktop build"></a>
+</p>
+
 # Point Break
 
-WarGames-inspired MeshCore planning tool. Runs as a dependency-free Cloudflare Worker with embedded browser assets and fixed-origin public-data endpoints.
+**Strategic Mesh Command** is a WarGames-inspired MeshCore planning desk for exploring public repeater listings, finding *possible* topology gaps, and screening candidate relay locations against sampled terrain.
 
-[Open the live application](https://point-break-mesh-lab.restedbaton1.chatgpt.site/)
+It turns public advertisements into a map, proximity hypotheses, and terrain profiles. It does **not** claim that a radio link is up, that a mesh is broken, or that a candidate site will work. Measured links can be imported separately as timestamped evidence.
 
-This repository contains the application source. The live app is hosted by Sites on Cloudflare Workers. GitHub Actions builds and tests changes to `main`; it does not automatically publish to Sites. GitHub Pages alone cannot run the `/api/nodes` and `/api/elevation` backend routes.
+## Get the Windows app
 
-Run `npm run build`, `npm test`, then `npm run dev` for a local web preview on port 8765. The web build needs no dependencies. Edit `web/` and `worker/api.mjs`; `dist/server/index.js` is generated.
+The `main` branch builds a Windows x64 installer and portable executable on every desktop-app change. The latest run is on [GitHub Actions](https://github.com/njsnowman/point-break/actions/workflows/desktop.yml). Open its newest successful **Windows desktop** run and download the **Point-Break-Windows-x64** artifact ZIP. The ZIP contains both `.exe` files.
 
-## Windows desktop
+- **Installer:** choose a per-user install folder and optionally add Start menu and desktop shortcuts.
+- **Portable:** run without installing.
 
-The desktop app bundles the web interface and API backend in Electron. It serves them through an internal `pointbreak://app` protocol without opening a localhost port or depending on the Sites deployment. Internet is still required for the public node feed, elevations, map tiles and optional web fonts. The renderer has Node integration disabled, context isolation and sandboxing enabled, denied device permissions, and external HTTPS links open in the system browser.
+These builds are unsigned, so Windows may show a security prompt. Keep the app online for MeshCore’s public feed, OpenStreetMap tiles, and terrain-elevation requests. Action artifacts are retained for 30 days; build another from the workflow page when needed.
 
-For development: `npm ci`, then `npm run desktop`. Build the Windows x64 installer and portable executable with `npm run desktop:pack`; outputs are in `release/`. These builds are unsigned. The installer supports a per-user installation, a chosen installation directory, and Start menu/desktop shortcuts. The portable executable runs without installation.
+For installation and analysis instructions, see **[How to use Point Break](docs/HOW_TO.md)**.
 
-GitHub Actions → **Windows desktop** produces a **Point-Break-Windows-x64** artifact containing both executables. Builds run on changes to the application or can be started with **Run workflow**. Artifact downloads require repository access and are retained for 30 days. The separate **Build and test** workflow checks the web/backend model.
+## Screenshots
 
-The desktop app preserves its window bounds and CRT preference locally. Observation imports remain session-only. Use **File → Export analysis…** or Ctrl+E to save a report with native download handling.
+The screenshots below are from the Windows desktop app using live public data for Central Indiana. Counts and terrain results change as listings and settings change.
 
-## Data and model
+| Network explorer | Terrain screening |
+| --- | --- |
+| ![Network explorer showing public repeaters, modeled groups, possible bridge targets, and the map](docs/images/network-explorer.png) | ![Terrain screen showing sampled elevation profiles for a candidate bridge placement](docs/images/terrain-profile.png) |
 
-- Public MeshCore type-2 repeater listings: `https://map.meshcore.io/api/v1/nodes`. Regional results cache for 15 minutes; upstream records are streamed to bound memory. Only public keys, names, advertised positions, radio parameters, source and advert time are retained. Regions are capped at 500 nearest repeaters, with a visible truncation notice.
-- Exact advertised radio-profile equality, recency and a distance limit define an explicitly hypothetical proximity graph. Minimum-distance bridges between groups produce investigation targets. They do not prove partitions in the RF network.
-- Timestamped directed observations may be imported locally as `{ "version": 1, "links": [{ "from": "64 hex public key", "to": "64 hex public key", "observedAt": "ISO timestamp with timezone", "snr": 7.5 }] }`. No packet-path short IDs are automatically interpreted as direct links. Imports are session-only; reports include the imported evidence.
-- Terrain comes from Open-Elevation on demand. Three geometric search points, each with two 15-point paths, use one 90-coordinate request. Profiles cache 24 hours. The screen uses a 4/3 effective Earth radius and 60% first Fresnel zone with actual advertised frequency and user-set AGL heights. Rank first by both legs being within the distance limit, then by weakest sampled clearance.
-- Candidate search points do not establish physical site access, land cover, structural suitability or successful bidirectional links. Trees, buildings, RF noise, equipment losses and a calibrated link-budget/propagation model remain outside this screen. Source elevation resolution is not guaranteed; sample spacing is shown explicitly.
+## What it does
 
-No automatic observer service is connected. Real public listings and elevations power the planning workflow; observed links require an evidence import. Provider failures show an explicit error rather than sample data. Basemap attribution is displayed using OpenStreetMap tiles and Leaflet 1.9.4 (BSD-2-Clause; see `web/vendor/LEAFLET-LICENSE`).
+- Fetches public MeshCore type-2 repeater listings for a selected region.
+- Filters nodes by recency and exact advertised radio profile.
+- Maps advertised positions and draws distance-limited proximity hypotheses.
+- Groups those hypothetical links and suggests short bridges between modeled groups for investigation.
+- Generates three candidate search points and screens both legs with sampled terrain, Earth curvature, and the 60% first Fresnel zone.
+- Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
+
+### Evidence labels matter
+
+Public listings describe advertised positions and advert times, not current health. Dotted map links, modeled groups, bridge targets, and candidate coordinates are planning hypotheses. A missing link observation is not proof of a broken connection. Terrain profiles use sparse ground samples; they cannot see every tree, building, source-resolution artifact, or RF condition. Field testing, a radio link budget, and site access checks remain necessary.
+
+## Run from source
+
+Requires Node.js 22 or newer.
+
+```sh
+npm ci
+npm run build
+npm test
+npm run dev
+```
+
+The local web preview is served at `http://localhost:8765`. For the desktop app, use `npm run desktop`. Build a Windows installer and portable executable with `npm run desktop:pack`; files are written to `release/`.
+
+## How it is packaged
+
+The Electron app loads the same interface and bundled API worker using the private `pointbreak://app/` protocol. It does not depend on the hosted Site or open a local HTTP port. The renderer runs with Node integration disabled, context isolation enabled, sandboxing enabled, and device permissions denied. External HTTPS links open in the system browser.
+
+GitHub Actions runs the test suite and packages the Windows app from source. The generated `dist/` and `release/` directories are intentionally excluded from Git: `dist/` is reproducible, and the Windows binaries are distributed as the Actions artifact.
+
+## Data, privacy, and limitations
+
+- **MeshCore:** `https://map.meshcore.io/api/v1/nodes`. Regional results cache for 15 minutes. Upstream records are streamed and filtered; the selected region returns at most 500 nearest repeaters with a truncation notice.
+- **Topology:** proximity requires an exact match on advertised frequency, bandwidth, spreading factor, and coding rate, plus the chosen recency and distance thresholds. It is a geometric model, not RF propagation analysis.
+- **Terrain:** Open-Elevation is queried only when the terrain screen runs. Each candidate uses 15 ground samples on each leg. The screen applies a 4/3 effective Earth radius and 60% Fresnel clearance using advertised frequency and user-entered antenna heights.
+- **Imported observations:** require full 64-character public keys, a direction, and a timezone-aware timestamp. Imports stay in the app session; there is no automatic observer feed.
+- **Location:** Point Break does not request device location. The default region is Central Indiana; coordinates are sent to the elevation provider only for an explicit terrain screen.
+- **Map:** Leaflet 1.9.4 and OpenStreetMap tiles, with attribution shown in the app. See `web/vendor/LEAFLET-LICENSE`.
+
+See [the full how-to guide](docs/HOW_TO.md) for data interpretation and troubleshooting.
+

@@ -9,7 +9,7 @@ Point Break helps you investigate MeshCore repeater topology and compare possibl
 3. Under **Artifacts**, download `Point-Break-Windows-x64` and extract the ZIP.
 4. Run `Point-Break-Setup-0.4.0-x64.exe` to install, or run `Point-Break-Portable-0.4.0-x64.exe` without installing.
 
-The installer supports Start menu and desktop shortcuts. Builds are unsigned; Windows may show a security prompt. The app needs internet for the public node feed, OpenStreetMap map tiles, and terrain elevation requests. Action artifacts expire after 30 days; the workflow builds a fresh one whenever it runs.
+The installer supports Start menu and desktop shortcuts. Builds are unsigned; Windows may show a security prompt. Use an internet connection to collect public data and map tiles, then save or export an area pack for field use offline. Action artifacts expire after 30 days; the workflow builds a fresh one whenever it runs.
 
 ## 2. Load the region you want to study
 
@@ -43,9 +43,17 @@ Treat the results this way:
 - **Potential bridges** connect modeled groups geometrically; they are not confirmed broken links.
 - **Candidate search points** are coordinates to investigate, not approved or accessible mounting sites.
 
-The map basemap can be toggled between street and hypothesis views. Use the **CRT** switch to change the display effect.
+The map toolbar selects Field Grid, Street, Topographic, or Aerial. Choose a color theme from Phosphor, Amber, Arctic, or Violet. The CRT switch toggles the display effect. In **Map layers**, enable mapped antennas/towers, cellular and wireless sites, explicitly tagged amateur-radio sites, and potential host structures. These OpenStreetMap overlays are incomplete and do not show whether a site is available or permitted.
 
-## 5. Screen candidate terrain
+## 5. Prepare an offline field snapshot
+
+While online, load the region you plan to use. Select **Offline Pack** and choose **Save area pack**. Point Break automatically saves the MeshCore regional feed on this device; the saved pack also includes the OSM infrastructure layers you have loaded and any terrain profile already screened. To bring the pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there.
+
+Select **Use saved snapshot** to work from the dated snapshot. You can still change analysis filters, inspect nodes and mapped layers, and view saved terrain profiles without internet. The Field Grid is generated locally. Street, topographic, and aerial tiles are online-only and are not downloaded or included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
+
+Offline packs are local files containing public regional listings and mapped infrastructure. Treat exported files as shareable data. Imported measured-link observations are not automatically included in newly saved packs.
+
+## 6. Screen candidate terrain
 
 1. Select a potential bridge.
 2. Review the three candidate search points and choose a candidate.
@@ -56,7 +64,7 @@ Each candidate is checked along both repeater-to-candidate legs using 15 ground 
 
 Positive sampled clearance does not establish a working radio path. Sparse elevation samples may miss local obstacles. The screen does not model trees, buildings, interference, equipment losses, land access, or a calibrated link budget. Verify the actual site and perform field tests before making deployment decisions.
 
-## 6. Import measured link observations
+## 7. Import measured link observations
 
 To add direct, timestamped evidence, select **Download format** in the Measured Link Evidence section. Fill the JSON `links` array using the template. Each record requires:
 
@@ -67,7 +75,7 @@ To add direct, timestamped evidence, select **Download format** in the Measured 
 
 The observation is directed: an A-to-B observation does not establish B-to-A. Do not convert a repeater’s appearance in a packet path into a direct link unless the measurement supports that inference. Imports are local to the current app session and are cleared when the session ends or when **Clear** is selected. Current recency and radio-profile filters determine which imported links appear in analysis.
 
-## 7. Export an analysis
+## 8. Export an analysis
 
 Use the export arrow in the app header or **File → Export analysis…** (Ctrl+E). The JSON report includes the feed snapshot and timestamp, selected assumptions, imported evidence, modeled groups, bridge candidates, ranked search points, terrain source, and limitations.
 
@@ -96,4 +104,3 @@ npm run desktop
 ```
 
 To build Windows x64 installer and portable outputs, run `npm run desktop:pack` on Windows. Outputs go to `release/`. For more technical detail, see the repository [README](../README.md) and [data/model notes](../README.md#data-privacy-and-limitations).
-

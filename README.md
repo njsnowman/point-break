@@ -20,7 +20,7 @@ The `main` branch builds a Windows x64 installer and portable executable on ever
 - **Installer:** choose a per-user install folder and optionally add Start menu and desktop shortcuts.
 - **Portable:** run without installing.
 
-These builds are unsigned, so Windows may show a security prompt. Keep the app online for MeshCore’s public feed, OpenStreetMap tiles, and terrain-elevation requests. Action artifacts are retained for 30 days; build another from the workflow page when needed.
+These builds are unsigned, so Windows may show a security prompt. Connect to collect MeshCore, map, infrastructure, and terrain data; save an area pack for offline field use. Action artifacts are retained for 30 days; build another from the workflow page when needed.
 
 For installation and analysis instructions, see **[How to use Point Break](docs/HOW_TO.md)**.
 
@@ -39,7 +39,12 @@ The screenshots below are from the Windows desktop app using live public data fo
 - Maps advertised positions and draws distance-limited proximity hypotheses.
 - Groups those hypothetical links and suggests short bridges between modeled groups for investigation.
 - Generates three candidate search points and screens both legs with sampled terrain, Earth curvature, and the 60% first Fresnel zone.
+- Offers Phosphor, Amber, Arctic, and Violet themes; glass-finish panels; and Field Grid, Street, Topographic, and Aerial basemaps.
+- Loads mapped public antennas/towers, cellular/wireless sites, explicitly tagged amateur-radio infrastructure, and potential host structures from OpenStreetMap.
+- Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
 - Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
+
+Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; Street, Topographic, Aerial, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
 
 ### Evidence labels matter
 
@@ -71,7 +76,6 @@ GitHub Actions runs the test suite and packages the Windows app from source. The
 - **Terrain:** Open-Elevation is queried only when the terrain screen runs. Each candidate uses 15 ground samples on each leg. The screen applies a 4/3 effective Earth radius and 60% Fresnel clearance using advertised frequency and user-entered antenna heights.
 - **Imported observations:** require full 64-character public keys, a direction, and a timezone-aware timestamp. Imports stay in the app session; there is no automatic observer feed.
 - **Location:** Point Break does not request device location. The default region is Central Indiana; coordinates are sent to the elevation provider only for an explicit terrain screen.
-- **Map:** Leaflet 1.9.4 and OpenStreetMap tiles, with attribution shown in the app. See `web/vendor/LEAFLET-LICENSE`.
+- **Map:** Leaflet 1.9.4; OpenStreetMap Street tiles and public infrastructure; Esri topographic/aerial basemaps; generated offline Field Grid. Attribution appears in the map. Tiles are not included in offline packs. See `web/vendor/LEAFLET-LICENSE`.
 
 See [the full how-to guide](docs/HOW_TO.md) for data interpretation and troubleshooting.
-

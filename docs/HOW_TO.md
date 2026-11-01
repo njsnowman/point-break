@@ -19,7 +19,7 @@ On launch, Point Break loads the Central Indiana area. It does not read your dev
 2. Enter latitude, longitude, and a radius from 10 to 150 km.
 3. Choose **Load public repeaters** and wait for the feed status to turn green.
 
-The region is centered on those coordinates. If the feed is unavailable, the app shows an error and does not substitute demo data.
+The region is centered on those coordinates. The quick-region menu includes Central Indiana and CVG (Cincinnati / Northern Kentucky), centered near the airport with a 60 km starting radius; change the radius or coordinates for your field area. If the feed is unavailable, the app shows an error and does not substitute demo data.
 
 ## 3. Set the model filters
 
@@ -47,7 +47,7 @@ The map toolbar selects Field Grid, Street, Topographic, or Aerial. Choose a col
 
 ## 5. Prepare an offline field snapshot
 
-While online, load the region you plan to use. Select **Offline Pack** and choose **Save area pack**. Point Break automatically saves the MeshCore regional feed on this device; the saved pack also includes the OSM infrastructure layers you have loaded and any terrain profile already screened. To bring the pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there.
+While online, load each region you plan to use. For example, load Central Indiana, save its pack, then select CVG and save a second pack. Each pack is stored separately by its region center and radius. Select **Offline Pack** and choose **Save area pack**. Point Break saves the MeshCore feed and loads mapped OSM infrastructure for the selected area; saved packs also include any terrain profile already screened. To bring a pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there. Export each region pack separately.
 
 Select **Use saved snapshot** to work from the dated snapshot. You can still change analysis filters, inspect nodes and mapped layers, and view saved terrain profiles without internet. The Field Grid is generated locally. Street, topographic, and aerial tiles are online-only and are not downloaded or included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
 

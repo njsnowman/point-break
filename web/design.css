@@ -177,6 +177,7 @@ dialog h2 { color:var(--ui-text); font:600 30px/1.15 "Barlow Condensed","DM Sans
 dialog p { color:var(--ui-muted); line-height:1.65; }
 dialog a { color:var(--pb-accent); }
 dialog label { color:var(--ui-muted); }
+dialog select { width:100%; min-height:44px; padding:8px 34px 8px 10px; border:1px solid var(--ui-border-strong); border-radius:var(--ui-radius-sm); background:var(--ui-bg); color:var(--ui-text); font:500 13px "DM Sans",system-ui,sans-serif; }
 dialog input { min-height:42px; padding:8px 10px; border:1px solid var(--ui-border-strong); border-radius:var(--ui-radius-sm); background:var(--ui-bg); color:var(--ui-text); }
 dialog .close { width:40px; height:40px; border:1px solid var(--ui-border); border-radius:var(--ui-radius-sm); color:var(--ui-text); font-size:24px; line-height:1; }
 .offline-area { color:var(--ui-text); font:500 12px/1.5 "DM Sans",system-ui,sans-serif; }

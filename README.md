@@ -42,6 +42,7 @@ The screenshots below are from the Windows desktop app using live public data fo
 - Offers Phosphor, Amber, Arctic, and Violet themes; glass-finish panels; and Field Grid, Street, Topographic, and Aerial basemaps.
 - Loads mapped public antennas/towers, cellular/wireless sites, explicitly tagged amateur-radio infrastructure, and potential host structures from OpenStreetMap.
 - Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
+- Includes quick region presets for Central Indiana and CVG (Cincinnati / Northern Kentucky); users can save independent offline packs for both.
 - Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
 
 Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; Street, Topographic, Aerial, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.

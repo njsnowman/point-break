@@ -2,7 +2,7 @@ name: Windows desktop
 on:
   push:
     branches: [main]
-    paths: ['desktop/**', 'web/**', 'worker/**', 'scripts/**', 'package*.json', '.github/workflows/desktop.yml']
+    paths: ['desktop/**', 'web/**', 'worker/**', 'scripts/**', 'package*.json', 'README.md', 'docs/**', '.github/workflows/desktop.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -27,3 +27,4 @@ jobs:
           path: release/*.exe
           if-no-files-found: error
           retention-days: 30
+

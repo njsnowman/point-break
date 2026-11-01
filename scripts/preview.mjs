@@ -1,0 +1,3 @@
+import {createServer} from 'node:http';import {readFile} from 'node:fs/promises';
+const code=await readFile(new URL('../dist/server/index.js',import.meta.url),'utf8');const worker=(await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'))).default;
+createServer(async(q,s)=>{try{const chunks=[];for await(const c of q)chunks.push(c);const body=Buffer.concat(chunks);const r=await worker.fetch(new Request('http://127.0.0.1:8765'+q.url,{method:q.method,headers:q.headers,...(body.length?{body}: {})}),{}, {waitUntil:p=>p.catch(()=>{})});s.writeHead(r.status,Object.fromEntries(r.headers));s.end(Buffer.from(await r.arrayBuffer()))}catch(e){s.writeHead(500);s.end(e.message)}}).listen(8765,'127.0.0.1',()=>console.log('http://127.0.0.1:8765'));

@@ -39,13 +39,13 @@ The screenshots below are from the Windows desktop app using live public data fo
 - Maps advertised positions and draws distance-limited proximity hypotheses.
 - Groups those hypothetical links and suggests short bridges between modeled groups for investigation.
 - Generates three candidate search points and screens both legs with sampled terrain, Earth curvature, and the 60% first Fresnel zone.
-- Offers Phosphor, Amber, Arctic, and Violet themes; glass-finish panels; and Field Grid, Street, Topographic, and Aerial basemaps.
+- Offers Phosphor, Amber, Arctic, and Violet themes; glass-finish panels; and seven basemap choices: offline Field Grid, OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo.
 - Loads mapped public antennas/towers, cellular/wireless sites, explicitly tagged amateur-radio infrastructure, and potential host structures from OpenStreetMap.
 - Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
 - Includes quick region presets for Central Indiana and CVG (Cincinnati / Northern Kentucky); users can save independent offline packs for both.
 - Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
 
-Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; Street, Topographic, Aerial, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
+Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; online basemaps, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded or included in area packs. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
 
 ### Evidence labels matter
 
@@ -77,6 +77,6 @@ GitHub Actions runs the test suite and packages the Windows app from source. The
 - **Terrain:** Open-Elevation is queried only when the terrain screen runs. Each candidate uses 15 ground samples on each leg. The screen applies a 4/3 effective Earth radius and 60% Fresnel clearance using advertised frequency and user-entered antenna heights.
 - **Imported observations:** require full 64-character public keys, a direction, and a timezone-aware timestamp. Imports stay in the app session; there is no automatic observer feed.
 - **Location:** Point Break does not request device location. The default region is Central Indiana; coordinates are sent to the elevation provider only for an explicit terrain screen.
-- **Map:** Leaflet 1.9.4; OpenStreetMap Street tiles and public infrastructure; Esri topographic/aerial basemaps; generated offline Field Grid. Attribution appears in the map. Tiles are not included in offline packs. See `web/vendor/LEAFLET-LICENSE`.
+- **Map:** Leaflet 1.9.4; OpenStreetMap, Esri, and USGS basemaps plus mapped public infrastructure; generated offline Field Grid. Attribution appears in the map. Tiles are not included in offline packs. See `web/vendor/LEAFLET-LICENSE`.
 
 See [the full how-to guide](docs/HOW_TO.md) for data interpretation and troubleshooting.

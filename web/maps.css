@@ -62,10 +62,14 @@ header,.inspector,.rail,.page-footer{background:linear-gradient(135deg,var(--pb-
 .infra-popup{min-width:170px}
 .infra-popup strong{display:block;color:var(--pb-accent);font-size:12px;margin-bottom:4px}
 .infra-popup span{display:block;color:#c4d7bf;font-size:10px;line-height:1.55}
-#map[data-basemap=street] .leaflet-tile-pane{filter:invert(1) grayscale(1) sepia(.4) hue-rotate(45deg) saturate(.65) brightness(.67)}
-#map[data-basemap=topo] .leaflet-tile-pane{filter:brightness(.72) saturate(.78)}
-#map[data-basemap=aerial] .leaflet-tile-pane{filter:brightness(.75) saturate(.85)}
+#map[data-basemap=osm] .leaflet-tile-pane{filter:invert(1) grayscale(1) sepia(.4) hue-rotate(45deg) saturate(.65) brightness(.67)}
+#map[data-basemap=esriStreet] .leaflet-tile-pane{filter:brightness(.78) saturate(.82)}
+#map[data-basemap=topo] .leaflet-tile-pane,#map[data-basemap=usgsTopo] .leaflet-tile-pane{filter:brightness(.72) saturate(.78)}
+#map[data-basemap=aerial] .leaflet-tile-pane,#map[data-basemap=usgsImageryTopo] .leaflet-tile-pane{filter:brightness(.75) saturate(.85)}
 #map[data-basemap=field] .leaflet-tile-pane{filter:none}
 .leaflet-control-attribution{font-size:8px!important;max-width:52%;white-space:normal}
+.map-mode{align-self:flex-start;margin:4px 0 0 auto;padding:7px 9px;border:1px solid var(--pb-glass-line);border-radius:7px;background:var(--pb-glass);backdrop-filter:blur(14px);color:#c4d9bc;font:8px 'Share Tech Mono',monospace;letter-spacing:.45px;box-shadow:0 8px 22px #0003}
+.map-mode::before{content:'●';margin-right:6px;color:var(--pb-accent)}
+#map[data-basemap=field]~.map-toolbar .map-mode::before{color:#ffcf70}
 @media(max-width:1050px){.header-right{gap:7px}.theme-picker select{max-width:72px}.offline-open{font-size:8px;padding:6px}}
 @media(max-width:760px){header{flex-wrap:wrap;gap:6px}.header-right{flex:1 0 100%;justify-content:flex-end;gap:7px;padding:0 8px 7px;flex-wrap:wrap}.theme-picker{display:flex;flex-direction:row;align-items:center;gap:4px}.theme-picker>span{display:none}.theme-picker select{max-width:80px}.header-right .offline-open{display:inline-flex;font-size:8px;padding:6px}.map-tools{max-width:100%;gap:5px}.map-picker,.layer-menu>summary,.hypothesis-toggle{height:32px;padding:0 8px;font-size:8px}.map-picker select{max-width:125px;font-size:8px}.map-label{display:none}.legend{font-size:7px;gap:7px}.layer-popover{width:230px}.offline-actions{grid-template-columns:1fr}.map-wrap{border-radius:10px}}

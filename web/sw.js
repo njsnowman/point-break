@@ -1,4 +1,4 @@
-const CACHE='point-break-shell-v6';
+const CACHE='point-break-shell-v7';
 const SHELL=['/','/index.html','/style.css','/terminal.css','/live.css','/maps.css','/design.css','/app.js','/analysis.mjs','/offline.mjs','/manifest.webmanifest','/logo.svg','/vendor/leaflet.js','/vendor/leaflet.css'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('point-break-shell-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

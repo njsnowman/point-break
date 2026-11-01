@@ -91,7 +91,8 @@ h1 span { color:var(--pb-accent); }
 .map-tools { max-width:calc(100% - 130px); gap:8px; }
 .map-picker,.layer-menu>summary,.hypothesis-toggle { min-height:42px; height:auto; padding:0 12px; color:var(--ui-text); font:600 11px/1.2 "DM Sans",system-ui,sans-serif; letter-spacing:.02em; }
 .map-picker span { color:var(--ui-muted); font:600 10px/1.2 "DM Sans",system-ui,sans-serif; letter-spacing:.04em; }
-.map-picker select { max-width:190px; min-height:40px; color:var(--ui-text); font:600 11px "DM Sans",system-ui,sans-serif; }
+.map-picker select { max-width:240px; min-height:40px; color:var(--ui-text); font:600 11px "DM Sans",system-ui,sans-serif; }
+.map-picker optgroup { background:#0b1710; color:#a6c29b; font-weight:700; }
 .layer-popover { width:min(300px,calc(100vw - 100px)); gap:12px; padding:16px; border-color:var(--ui-border-strong); border-radius:var(--ui-radius); color:var(--ui-text); font:500 12px/1.45 "DM Sans",system-ui,sans-serif; }
 .layer-popover strong { color:var(--pb-accent); font:700 11px/1.35 "DM Sans",system-ui,sans-serif; letter-spacing:.07em; }
 .layer-popover label { min-height:28px; gap:10px; }

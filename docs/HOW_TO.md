@@ -43,13 +43,15 @@ Treat the results this way:
 - **Potential bridges** connect modeled groups geometrically; they are not confirmed broken links.
 - **Candidate search points** are coordinates to investigate, not approved or accessible mounting sites.
 
-The map toolbar selects Field Grid, Street, Topographic, or Aerial. Choose a color theme from Phosphor, Amber, Arctic, or Violet. The CRT switch toggles the display effect. In **Map layers**, enable mapped antennas/towers, cellular and wireless sites, explicitly tagged amateur-radio sites, and potential host structures. These OpenStreetMap overlays are incomplete and do not show whether a site is available or permitted.
+The **Map** menu offers Field Grid (offline), OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo. OpenStreetMap is the standard OSM street style; USGS basemaps are available across the United States. The map status chip shows whether you are using the local offline grid or online tiles. Choose a color theme from Phosphor, Amber, Arctic, or Violet. The CRT switch toggles the display effect.
+
+Open **Overlays** to enable mapped antennas/towers, cellular and wireless sites, explicitly tagged amateur-radio sites, and potential host structures. MeshCore repeaters, proximity hypotheses, and imported observations remain separate map layers. These OpenStreetMap infrastructure overlays are incomplete and do not show whether a site is available or permitted.
 
 ## 5. Prepare an offline field snapshot
 
 While online, load each region you plan to use. For example, load Central Indiana, save its pack, then select CVG and save a second pack. Each pack is stored separately by its region center and radius. Select **Offline Pack** and choose **Save area pack**. Point Break saves the MeshCore feed and loads mapped OSM infrastructure for the selected area; saved packs also include any terrain profile already screened. To bring a pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there. Export each region pack separately.
 
-Select **Use saved snapshot** to work from the dated snapshot. You can still change analysis filters, inspect nodes and mapped layers, and view saved terrain profiles without internet. The Field Grid is generated locally. Street, topographic, and aerial tiles are online-only and are not downloaded or included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
+Select **Use saved snapshot** to work from the dated snapshot. You can still change analysis filters, inspect nodes and mapped layers, and view saved terrain profiles without internet. The Field Grid is generated locally. All other basemaps load tiles online; they are never downloaded or included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
 
 Offline packs are local files containing public regional listings and mapped infrastructure. Treat exported files as shareable data. Imported measured-link observations are not automatically included in newly saved packs.
 

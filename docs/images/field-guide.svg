@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="270" viewBox="0 0 1440 270" role="img" aria-labelledby="title desc">
+  <title id="title">Point Break seven-step field guide</title>
+  <desc id="desc">Choose an area and basemap, optionally add map layers, analyze the mesh, review a possible bridge, screen placement terrain, and save an offline pack.</desc>
+  <rect width="1440" height="270" rx="10" fill="#e7e9e0"/>
+  <rect x="0" y="0" width="1440" height="58" rx="10" fill="#172321"/>
+  <rect x="0" y="48" width="1440" height="10" fill="#172321"/>
+  <text x="34" y="37" fill="#f0f3ef" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="1">FIELD GUIDE</text>
+  <text x="1406" y="36" fill="#b5c2b8" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="end">MAP → PLACEMENT → OFFLINE</text>
+  <line x1="124" y1="128" x2="1316" y2="128" stroke="#aeb9ac" stroke-width="2"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <g transform="translate(48 0)"><circle cx="76" cy="128" r="22" fill="#bb593d"/><text x="76" y="134" fill="white" font-size="16" font-weight="700" text-anchor="middle">1</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Area</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Choose region</text></g>
+    <g transform="translate(238 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">2</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Map</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Street, topo, aerial</text></g>
+    <g transform="translate(428 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">3</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Layers</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Optional map features</text></g>
+    <g transform="translate(618 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">4</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Analyze</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Model nearby links</text></g>
+    <g transform="translate(808 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">5</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Bridge</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Review a hypothesis</text></g>
+    <g transform="translate(998 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">6</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Placement</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Screen terrain paths</text></g>
+    <g transform="translate(1188 0)"><circle cx="76" cy="128" r="22" fill="#f5f5ed" stroke="#bb593d" stroke-width="2"/><text x="76" y="134" fill="#8f442f" font-size="16" font-weight="700" text-anchor="middle">7</text><text x="76" y="177" fill="#26332d" font-size="16" font-weight="600" text-anchor="middle">Offline</text><text x="76" y="199" fill="#59665e" font-size="12" text-anchor="middle">Save a field pack</text></g>
+  </g>
+  <text x="34" y="247" fill="#657269" font-family="Segoe UI,Arial,sans-serif" font-size="12">Suggested flow only. Confirm access, equipment compatibility, and bidirectional radio performance on site.</text>
+</svg>

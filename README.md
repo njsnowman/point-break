@@ -32,6 +32,10 @@ The screenshots below are from the Windows desktop app using live public data fo
 | --- | --- |
 | ![Field Atlas network explorer showing public repeaters, modeled groups, possible bridge targets, and the map](docs/images/field-atlas.jpg) | ![Terrain screen showing sampled elevation profiles for a candidate bridge placement](docs/images/terrain-profile.png) |
 
+The in-app Field Guide walks through the seven-step workflow:
+
+![Field guide steps: area, map, optional layers, analyze, bridge, placement, offline](docs/images/field-guide.svg)
+
 ## What it does
 
 - Fetches public MeshCore type-2 repeater listings for a selected region.
@@ -44,6 +48,7 @@ The screenshots below are from the Windows desktop app using live public data fo
 - Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
 - Includes quick region presets for Central Indiana and CVG (Cincinnati / Northern Kentucky); users can save independent offline packs for both.
 - Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
+- Guides new users through a visual seven-step flow: area, basemap, optional overlays, analysis, bridge selection, terrain screening, and offline preparation.
 
 Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; online basemaps, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded or included in area packs. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
 

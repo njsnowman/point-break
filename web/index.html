@@ -42,6 +42,19 @@
           <div><div class="eyebrow">POINT BREAK // TACTICAL DISPLAY // PUBLIC REPEATER FEED</div><h1>Shall we connect<br><span>the network?<b class="cursor">_</b></span></h1></div>
           <button class="region" onclick="document.getElementById('region-dialog').showModal()" id="region-button">⌖ CENTRAL INDIANA ⌄</button>
         </div>
+        <section class="field-guide" aria-labelledby="guide-heading">
+          <div class="guide-top"><div><span class="guide-kicker">FIELD GUIDE</span><h2 id="guide-heading">A clear path from map to placement</h2></div><span id="guide-progress" class="guide-progress">0 OF 7 COMPLETE</span></div>
+          <nav class="guide-steps" id="guide-steps" aria-label="Seven-step field workflow">
+            <button type="button" class="guide-step" data-guide-step="1"><span class="guide-number">1</span><span>Area</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="2"><span class="guide-number">2</span><span>Map</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="3"><span class="guide-number">3</span><span>Layers</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="4"><span class="guide-number">4</span><span>Analyze</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="5"><span class="guide-number">5</span><span>Bridge</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="6"><span class="guide-number">6</span><span>Placement</span><i></i></button>
+            <button type="button" class="guide-step" data-guide-step="7"><span class="guide-number">7</span><span>Offline</span><i></i></button>
+          </nav>
+          <div class="guide-current" aria-live="polite"><div><strong id="guide-title">1. Choose your coverage area</strong><p id="guide-copy">Start with Central Indiana or CVG, then adjust the radius to match your area.</p></div><button type="button" class="guide-action" id="guide-action">Choose area <span>→</span></button></div>
+        </section>
         <div class="metrics">
           <div><span>LISTED REPEATERS</span><strong id="node-count">—<small>loading public feed</small></strong></div>
           <div><span>MODELED GROUPS</span><strong id="clusters">—<small>not verified topology</small></strong></div>
@@ -59,7 +72,7 @@
           <div class="map-toolbar">
             <div class="map-tools">
               <label class="map-picker"><span>MAP</span><select id="basemap" aria-label="Choose map style"><optgroup label="Offline"><option value="field">Field Grid · Offline</option></optgroup><optgroup label="Street maps"><option value="osm">OpenStreetMap</option><option value="esriStreet">Esri Streets</option></optgroup><optgroup label="Terrain & imagery"><option value="topo">Esri Topographic</option><option value="usgsTopo">USGS Topo · USA</option><option value="aerial">Esri Aerial Imagery</option><option value="usgsImageryTopo">USGS Aerial + Topo · USA</option></optgroup></select></label>
-              <details class="layer-menu"><summary>OVERLAYS <i id="layer-count">0</i></summary>
+              <details class="layer-menu" id="overlay-menu"><summary>OVERLAYS <i id="layer-count">0</i></summary>
                 <div class="layer-popover">
                   <strong>NETWORK & INFRASTRUCTURE</strong>
                   <label><input id="layer-antennas" type="checkbox"> Antennas, masts & towers</label>
@@ -89,9 +102,9 @@
         <h2>Explore the next connection.</h2>
         <p class="muted">Find possible bridges between proximity groups. These are investigation targets, not confirmed mesh breaks.</p>
         <button class="primary" id="analyze" onclick="analyze()" disabled>Analyze topology <span>↗</span></button>
-        <div class="section-label">POTENTIAL BRIDGES <span id="bridge-label">—</span></div><div id="gaps"><p class="muted">Awaiting data…</p></div>
+        <div class="section-label" id="bridge-target">POTENTIAL BRIDGES <span id="bridge-label">—</span></div><div id="gaps"><p class="muted">Awaiting data…</p></div>
         <div class="section-label">CANDIDATE SEARCH POINTS <span>UNVERIFIED SITES</span></div><div id="candidates"><p class="muted">Candidate points will appear after analysis.</p></div>
-        <div class="simulation">
+        <div class="simulation" id="placement-target">
           <div class="sim-title"><span>CANDIDATE ANTENNA HEIGHT</span><strong><span id="height-label">10</span> m AGL</strong></div>
           <input id="height" aria-label="Candidate antenna height" type="range" min="3" max="60" value="10" oninput="updateHeight()"><div class="range-labels"><span>3 m</span><span>60 m</span></div>
           <label class="remote-height">Existing repeater height assumption <input id="remote-height" type="number" min="1" max="100" value="10" onchange="updateHeight()"> m AGL</label>

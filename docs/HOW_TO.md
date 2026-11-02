@@ -2,6 +2,18 @@
 
 Point Break helps you investigate MeshCore repeater topology and compare possible relay locations. Its map and rankings are planning aids: they do not prove a mesh break, a working RF path, or a suitable installation site.
 
+## Quick start: follow the seven steps
+
+The **Field Guide** at the top of the map workspace tracks the workflow and takes you to the relevant controls.
+
+1. **Area:** choose Central Indiana, CVG, or custom coordinates and set a radius. Wait for the public listings or a saved snapshot to load.
+2. **Map:** choose streets to navigate, topographic maps to read terrain, aerial imagery to inspect rooftops, or Field Grid when offline.
+3. **Layers (optional):** add mapped towers, wireless sites, amateur-radio sites, or possible host structures. These public map features are incomplete and do not imply access.
+4. **Analyze:** model nearby links using the selected radio profile and distance filters. The results are planning hypotheses, not confirmed breaks.
+5. **Bridge:** review a possible bridge between modeled groups. If none appear, adjust the filters or region and analyze again.
+6. **Placement:** choose a candidate search point and screen its two terrain paths. Review the assumptions; positive sampled clearance does not establish a working radio link.
+7. **Offline:** save the regional data pack for field use. Online map tiles are not included; Field Grid works without a connection. Confirm site access and field-test both directions before installation.
+
 ## 1. Download and install
 
 1. Open the [Windows desktop workflow](https://github.com/njsnowman/point-break/actions/workflows/desktop.yml).

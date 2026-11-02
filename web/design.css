@@ -46,8 +46,14 @@ button:disabled { cursor:not-allowed; opacity:.55; }
 .app { margin-left:72px; }
 
 header { min-height:78px; height:auto; padding:12px clamp(20px,2.4vw,36px); gap:clamp(20px,3vw,44px); background:var(--ui-panel); border-color:var(--ui-border); backdrop-filter:blur(20px) saturate(135%); }
+.brand-lockup { display:flex; align-items:center; gap:13px; flex:0 0 auto; }
 .wordmark { flex:0 0 auto; color:var(--ui-text); font:700 19px/1.05 "DM Sans",system-ui,sans-serif; letter-spacing:.02em; }
 .wordmark small { margin-top:6px; color:var(--ui-muted); font:600 10px/1.2 "DM Sans",system-ui,sans-serif; letter-spacing:.16em; }
+.brand-wave { display:block; width:45px; height:34px; overflow:visible; filter:drop-shadow(0 2px 5px rgba(0,0,0,.25)); }
+.brand-wave .wave-back { fill:var(--pb-cyan,#547d71); }
+.brand-wave .wave-crest { fill:var(--pb-accent); }
+.brand-wave .wave-foam { fill:var(--ui-text); }
+.brand-wave .wave-line { fill:none; stroke:var(--ui-muted); stroke-width:1.15; stroke-linecap:round; opacity:.8; }
 nav { gap:clamp(14px,2vw,28px); }
 nav button { min-height:44px; padding:0 2px; color:var(--ui-muted); font-size:12px; }
 nav .selected { color:var(--ui-text); }
@@ -259,3 +265,4 @@ dialog .close { width:40px; height:40px; border:1px solid var(--ui-border); bord
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
 }
+

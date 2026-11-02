@@ -25,7 +25,15 @@
   </aside>
   <div class="app">
     <header>
-      <div class="wordmark">POINT<span>BREAK</span><small>STRATEGIC MESH COMMAND</small></div>
+      <div class="brand-lockup">
+        <div class="wordmark">POINT<span>BREAK</span><small>STRATEGIC MESH COMMAND</small></div>
+        <svg class="brand-wave" viewBox="0 0 56 40" aria-hidden="true" focusable="false">
+          <path class="wave-back" d="M4 27c7-1 11-5 14-12 3-7 7-10 13-9-3 3-4 6-3 9 2 5 8 7 16 6-4 7-11 11-20 11H4z"/>
+          <path class="wave-crest" d="M31 6c4-3 9-3 14 0l7 5-9-1c-4 0-7 1-10 4l-4 3c-2-4-1-8 2-11z"/>
+          <path class="wave-foam" d="M30 17c3-3 7-5 12-5l7 1-5 2c-4 1-7 3-10 6-2 2-5 3-9 3 2-2 3-5 5-7z"/>
+          <path class="wave-line" d="M9 30c9 2 19 1 27-3 5-2 8-5 11-9"/>
+        </svg>
+      </div>
       <nav><button class="selected" onclick="resetMap()">Network explorer</button><button onclick="analyze()">Placement lab</button></nav>
       <div class="header-right">
         <label class="theme-picker"><span>STYLE</span><select id="theme-select" aria-label="Color theme"><option value="atlas">FIELD ATLAS</option><option value="phosphor">PHOSPHOR</option><option value="amber">AMBER</option><option value="arctic">ARCTIC</option><option value="violet">VIOLET</option></select></label>
@@ -126,3 +134,4 @@
   <script type="module" src="/app.js"></script>
 </body>
 </html>
+

@@ -210,13 +210,21 @@ body[data-theme="atlas"] .profile-panel svg { border-color:#c5cdc2; }
 .guide-step.complete .guide-number { border-color:#658b66; background:#658b66; color:white; }
 .guide-current { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:9px; padding:9px 10px; border:1px solid var(--ui-border); border-radius:5px; background:var(--ui-panel-raised); }
 .guide-current>div { min-width:0; }
+.guide-help { margin:8px 0 0; color:var(--ui-muted); font:500 11px/1.4 "Segoe UI",Arial,sans-serif; }
+.guide-current-label { display:block; margin-bottom:4px; color:var(--pb-accent); font:700 9px/1.2 "Segoe UI",Arial,sans-serif; letter-spacing:.08em; }
 .guide-current strong { display:block; color:var(--ui-text); font-size:12px; line-height:1.35; }
-.guide-current p { margin:2px 0 0; color:var(--ui-muted); font-size:11px; line-height:1.4; }
+.guide-current p { margin:3px 0 0; color:var(--ui-muted); font-size:11px; line-height:1.5; }
 .guide-action { min-height:34px; flex:0 0 auto; padding:0 10px; border:1px solid var(--pb-accent); border-radius:4px; background:var(--pb-accent); color:white; font-size:11px; font-weight:700; white-space:nowrap; }
 .guide-action span { padding-left:5px; }
+.guide-step { cursor:pointer; transition:border-color .16s ease,background-color .16s ease,color .16s ease; }
+.guide-step:hover { border-color:var(--pb-accent); background:color-mix(in srgb,var(--pb-accent) 7%,transparent); color:var(--ui-text); }
+.guide-step:focus-visible,.guide-action:focus-visible { outline:2px solid var(--pb-accent); outline-offset:2px; }
 body[data-theme="atlas"] .field-guide { border-color:#c4cbc1; border-radius:4px; background:rgba(249,249,242,.82); box-shadow:0 3px 12px #26332d0a; backdrop-filter:blur(10px); }
 body[data-theme="atlas"] .guide-top h2 { color:#29372f; }
 body[data-theme="atlas"] .guide-progress { color:#657269; }
+body[data-theme="atlas"] .guide-help { color:#59665e; }
+body[data-theme="atlas"] .guide-current-label { color:#8f442f; }
+body[data-theme="atlas"] .guide-step:hover { border-color:#a96b50; background:#f5e9e1; color:#29372f; }
 body[data-theme="atlas"] .guide-step { border-color:#ccd2c9; border-radius:3px; color:#58665d; }
 body[data-theme="atlas"] .guide-number { border-color:#bdc6bb; color:#354239; }
 body[data-theme="atlas"] .guide-step.active { border-color:#bd8065; background:#f5e9e1; color:#29372f; }

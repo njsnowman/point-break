@@ -61,11 +61,11 @@ Open **Overlays** to enable mapped antennas/towers, cellular and wireless sites,
 
 ## 5. Prepare an offline field snapshot
 
-While online, load each region you plan to use. For example, load Central Indiana, save its pack, then select CVG and save a second pack. Each pack is stored separately by its region center and radius. Select **Offline Pack** and choose **Save area pack**. Point Break saves the MeshCore feed and loads mapped OSM infrastructure for the selected area; saved packs also include any terrain profile already screened. To bring a pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there. Export each region pack separately.
+While online, load each region you plan to use. For example, load Central Indiana, save its pack, then select CVG and save a second pack. Each pack is stored separately by its region center and radius. Select **Offline Pack** and review the five preparation steps: MeshCore snapshot, local map, optional mapped overlays, optional terrain profiles, and app-shell readiness. Choose **Save field pack** to refresh the local snapshot. It records the MeshCore capture time, OpenStreetMap capture time when available, terrain profile date, map choice, settings, and imported observations. Missing overlays or terrain are clearly marked as optional. To bring a pack to another device, choose **Export pack file** and move the `.json` file to that device, then choose **Import pack file** there. Export each region pack separately.
 
-Select **Use saved snapshot** to work from the dated snapshot. You can still change analysis filters, inspect nodes and mapped layers, and view saved terrain profiles without internet. The Field Grid is generated locally. All other basemaps load tiles online; they are never downloaded or included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
+Choose **Run offline check** to activate the saved snapshot, switch to Field Grid, and verify that the required app files are cached. The result explicitly says whether the app shell can launch offline. This preview does not turn off the device's internet connection. The Field Grid is generated locally; all other basemaps load tiles online, and those tiles are never included in packs. Refresh the pack when connected because public advertisements and mapped features may change. The app shell is cached by supported HTTPS browsers; the desktop app bundles the shell locally. A first-ever browser visit still needs internet to load the app before a pack can be imported.
 
-Offline packs are local files containing public regional listings and mapped infrastructure. Treat exported files as shareable data. Imported measured-link observations are not automatically included in newly saved packs.
+Offline packs are local files containing public regional listings, mapped infrastructure, and any imported measured-link observations. Treat exported files as shareable data.
 
 ## 6. Screen candidate terrain
 
@@ -87,7 +87,7 @@ To add direct, timestamped evidence, select **Download format** in the Measured 
 - `observedAt`: ISO-8601 timestamp with a timezone (for example, `2026-11-01T16:00:00Z`)
 - `snr`: optional numeric signal-to-noise ratio in dB
 
-The observation is directed: an A-to-B observation does not establish B-to-A. Do not convert a repeater’s appearance in a packet path into a direct link unless the measurement supports that inference. Imports are local to the current app session and are cleared when the session ends or when **Clear** is selected. Current recency and radio-profile filters determine which imported links appear in analysis.
+The observation is directed: an A-to-B observation does not establish B-to-A. Do not convert a repeater’s appearance in a packet path into a direct link unless the measurement supports that inference. Imported observations are stored locally with the active area pack; **Clear** removes them from both the current analysis and saved pack. Current recency and radio-profile filters determine which imported links appear in analysis.
 
 ## 8. Export an analysis
 
@@ -118,3 +118,4 @@ npm run desktop
 ```
 
 To build Windows x64 installer and portable outputs, run `npm run desktop:pack` on Windows. Outputs go to `release/`. For more technical detail, see the repository [README](../README.md) and [data/model notes](../README.md#data-privacy-and-limitations).
+

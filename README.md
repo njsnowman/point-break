@@ -45,12 +45,12 @@ The in-app Field Guide walks through the seven-step workflow:
 - Generates three candidate search points and screens both legs with sampled terrain, Earth curvature, and the 60% first Fresnel zone.
 - Opens in Field Atlas, a warm, high-contrast map workspace framed by dark field controls and restrained glass-finish panels. Choose a custom accent color or switch to Phosphor, Amber, Arctic, and Violet. Seven basemap choices include offline Field Grid, OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo.
 - Loads mapped public antennas/towers, cellular/wireless sites, explicitly tagged amateur-radio infrastructure, and potential host structures from OpenStreetMap.
-- Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
+- Saves guided, dated regional offline packs with MeshCore listings, mapped overlays, imported observations, analysis settings, and available terrain profiles; checks local app-cache readiness and imports or exports portable packs.
 - Includes quick region presets for Central Indiana and CVG (Cincinnati / Northern Kentucky); users can save independent offline packs for both.
 - Imports timestamped, directed repeater observations from a local JSON file, and exports the analysis as JSON.
 - Guides new users through a visual seven-step flow: area, basemap, optional overlays, analysis, bridge selection, terrain screening, and offline preparation.
 
-Offline packs preserve a snapshot for local analysis. The Field Grid and saved data work without a network connection; online basemaps, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded or included in area packs. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
+Offline packs preserve a snapshot for local analysis and show the capture date and coverage for each data group. The offline check activates that snapshot, selects the local Field Grid, and confirms whether app-shell files are cached; it does not disconnect the device from the internet. The Field Grid and saved data work without a network connection; online basemaps, live feeds, and new elevation requests require internet. External map tiles are never bulk-downloaded or included in area packs. The browser app shell is cached after its first HTTPS visit, and the desktop app bundles it locally.
 
 ### Evidence labels matter
 
@@ -80,8 +80,9 @@ GitHub Actions runs the test suite and packages the Windows app from source. The
 - **MeshCore:** `https://map.meshcore.io/api/v1/nodes`. Regional results cache for 15 minutes. Upstream records are streamed and filtered; the selected region returns at most 500 nearest repeaters with a truncation notice.
 - **Topology:** proximity requires an exact match on advertised frequency, bandwidth, spreading factor, and coding rate, plus the chosen recency and distance thresholds. It is a geometric model, not RF propagation analysis.
 - **Terrain:** Open-Elevation is queried only when the terrain screen runs. Each candidate uses 15 ground samples on each leg. The screen applies a 4/3 effective Earth radius and 60% Fresnel clearance using advertised frequency and user-entered antenna heights.
-- **Imported observations:** require full 64-character public keys, a direction, and a timezone-aware timestamp. Imports stay in the app session; there is no automatic observer feed.
+- **Imported observations:** require full 64-character public keys, a direction, and a timezone-aware timestamp. Imports are stored locally with the active area pack; there is no automatic observer feed.
 - **Location:** Point Break does not request device location. The default region is Central Indiana; coordinates are sent to the elevation provider only for an explicit terrain screen.
 - **Map:** Leaflet 1.9.4; OpenStreetMap, Esri, and USGS basemaps plus mapped public infrastructure; generated offline Field Grid. Attribution appears in the map. Tiles are not included in offline packs. See `web/vendor/LEAFLET-LICENSE`.
 
 See [the full how-to guide](docs/HOW_TO.md) for data interpretation and troubleshooting.
+

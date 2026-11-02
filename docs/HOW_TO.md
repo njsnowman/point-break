@@ -43,7 +43,7 @@ Treat the results this way:
 - **Potential bridges** connect modeled groups geometrically; they are not confirmed broken links.
 - **Candidate search points** are coordinates to investigate, not approved or accessible mounting sites.
 
-The **Map** menu offers Field Grid (offline), OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo. OpenStreetMap is the standard OSM street style; USGS basemaps are available across the United States. The map status chip shows whether you are using the local offline grid or online tiles. Choose a color theme from Phosphor, Amber, Arctic, or Violet. The CRT switch toggles the display effect.
+The **Map** menu offers Field Grid (offline), OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo. OpenStreetMap is the standard OSM street style; USGS basemaps are available across the United States. The map status chip shows whether you are using the local offline grid or online tiles. The app opens in **Field Atlas**, a light map workspace with a dark diagnostics panel. Choose another color theme or use the **Accent** color control; the accent choice is saved on this device. The CRT switch toggles the display effect.
 
 Open **Overlays** to enable mapped antennas/towers, cellular and wireless sites, explicitly tagged amateur-radio sites, and potential host structures. MeshCore repeaters, proximity hypotheses, and imported observations remain separate map layers. These OpenStreetMap infrastructure overlays are incomplete and do not show whether a site is available or permitted.
 

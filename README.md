@@ -30,7 +30,7 @@ The screenshots below are from the Windows desktop app using live public data fo
 
 | Network explorer | Terrain screening |
 | --- | --- |
-| ![Network explorer showing public repeaters, modeled groups, possible bridge targets, and the map](docs/images/network-explorer.png) | ![Terrain screen showing sampled elevation profiles for a candidate bridge placement](docs/images/terrain-profile.png) |
+| ![Field Atlas network explorer showing public repeaters, modeled groups, possible bridge targets, and the map](docs/images/field-atlas.jpg) | ![Terrain screen showing sampled elevation profiles for a candidate bridge placement](docs/images/terrain-profile.png) |
 
 ## What it does
 
@@ -39,7 +39,7 @@ The screenshots below are from the Windows desktop app using live public data fo
 - Maps advertised positions and draws distance-limited proximity hypotheses.
 - Groups those hypothetical links and suggests short bridges between modeled groups for investigation.
 - Generates three candidate search points and screens both legs with sampled terrain, Earth curvature, and the 60% first Fresnel zone.
-- Offers Phosphor, Amber, Arctic, and Violet themes; glass-finish panels; and seven basemap choices: offline Field Grid, OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo.
+- Opens in Field Atlas, a warm, high-contrast map workspace framed by dark field controls and restrained glass-finish panels. Choose a custom accent color or switch to Phosphor, Amber, Arctic, and Violet. Seven basemap choices include offline Field Grid, OpenStreetMap, Esri Streets, Esri Topographic, USGS Topo, Esri Aerial Imagery, and USGS Aerial + Topo.
 - Loads mapped public antennas/towers, cellular/wireless sites, explicitly tagged amateur-radio infrastructure, and potential host structures from OpenStreetMap.
 - Saves dated regional offline packs with MeshCore listings, loaded infrastructure, analysis settings, and available terrain profiles; imports and exports portable packs.
 - Includes quick region presets for Central Indiana and CVG (Cincinnati / Northern Kentucky); users can save independent offline packs for both.

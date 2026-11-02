@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="/live.css">
   <link rel="stylesheet" href="/maps.css">
   <link rel="stylesheet" href="/design.css">
+  <link rel="stylesheet" href="/atlas.css">
 </head>
-<body class="crt" data-theme="phosphor">
+<body data-theme="atlas">
   <aside class="rail">
     <a class="brand" href="#" aria-label="Point Break">↯</a>
     <button class="active" title="Network map" onclick="resetMap()">◈</button>
@@ -27,8 +28,9 @@
       <div class="wordmark">POINT<span>BREAK</span><small>STRATEGIC MESH COMMAND</small></div>
       <nav><button class="selected" onclick="resetMap()">Network explorer</button><button onclick="analyze()">Placement lab</button></nav>
       <div class="header-right">
-        <label class="theme-picker"><span>DISPLAY</span><select id="theme-select" aria-label="Color theme"><option value="phosphor">PHOSPHOR</option><option value="amber">AMBER</option><option value="arctic">ARCTIC</option><option value="violet">VIOLET</option></select></label>
-        <button class="crt-toggle" id="crt-toggle" onclick="toggleCRT()" aria-pressed="true">CRT: ON</button>
+        <label class="theme-picker"><span>STYLE</span><select id="theme-select" aria-label="Color theme"><option value="atlas">FIELD ATLAS</option><option value="phosphor">PHOSPHOR</option><option value="amber">AMBER</option><option value="arctic">ARCTIC</option><option value="violet">VIOLET</option></select></label>
+        <label class="accent-picker" title="Choose interface accent color"><span>ACCENT</span><input id="accent-color" type="color" value="#bb593d" aria-label="Accent color"></label>
+        <button class="crt-toggle" id="crt-toggle" onclick="toggleCRT()" aria-pressed="false">CRT: OFF</button>
         <button class="crt-toggle offline-open" onclick="document.getElementById('offline-dialog').showModal()">OFFLINE PACK</button>
         <span class="demo" id="feed-badge"><i></i> PUBLIC DATA</span>
         <button class="icon" onclick="exportReport()" title="Export analysis">↗</button>

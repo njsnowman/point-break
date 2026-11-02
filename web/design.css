@@ -8,9 +8,9 @@
   --ui-text: #e6eee5;
   --ui-muted: #b3c0b2;
   --ui-subtle: #95a596;
-  --ui-radius-sm: 8px;
-  --ui-radius: 12px;
-  --ui-radius-lg: 16px;
+  --ui-radius-sm: 4px;
+  --ui-radius: 6px;
+  --ui-radius-lg: 8px;
   --ui-space-1: 4px;
   --ui-space-2: 8px;
   --ui-space-3: 12px;
@@ -282,6 +282,26 @@ dialog .close { width:40px; height:40px; border:1px solid var(--ui-border); bord
   .offline-badge { grid-column:2; justify-self:start; }
   .offline-actions { grid-template-columns:1fr; }
 }
+/* One crisp glass language for planning cards and floating controls. */
+.gap-card,.candidate,.simulation,.detail-panel,.profile-panel,.evidence-panel,.field-guide,.guide-current,.offline-check-step,.offline-area,.offline-check-result,.layer-popover,.map-label,.legend,.notice {
+  border-radius:4px;
+  border-color:var(--ui-border-strong);
+  background-image:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px rgba(255,255,255,.075),0 7px 18px rgba(0,0,0,.14);
+  backdrop-filter:blur(16px) saturate(125%);
+}
+.gap-card,.candidate,.simulation,.detail-panel,.profile-panel,.evidence-panel,.field-guide,.guide-current,.offline-check-step,.offline-area,.offline-check-result,.layer-popover,.notice { border:1px solid var(--ui-border-strong); }
+.gap-card,.candidate { transition:border-color .16s ease,background-color .16s ease,box-shadow .16s ease,transform .16s ease; }
+.gap-card:hover,.candidate:hover { border-color:color-mix(in srgb,var(--pb-accent) 55%,var(--ui-border-strong)); box-shadow:inset 0 1px rgba(255,255,255,.09),0 9px 20px rgba(0,0,0,.19); transform:translateY(-1px); }
+.gap-card.chosen,.candidate.selected { border-color:color-mix(in srgb,var(--pb-accent) 64%,var(--ui-border-strong)); }
+.candidate:focus-visible,.gap-card:focus-visible { outline:2px solid var(--pb-accent); outline-offset:2px; }
+.map-wrap { border-radius:5px; box-shadow:0 8px 20px rgba(0,0,0,.13); }
+.profile-panel svg { border-radius:3px; }
+.layer-popover { box-shadow:inset 0 1px rgba(255,255,255,.25),0 12px 28px rgba(0,0,0,.2); }
+.guide-step,.map-picker,.layer-menu>summary,.hypothesis-toggle,.map-mode,.offline-row-action { border-radius:4px; }
+.offline-check-step { box-shadow:inset 0 1px rgba(255,255,255,.1),0 3px 9px rgba(0,0,0,.08); }
+dialog { border-radius:6px; backdrop-filter:blur(22px) saturate(135%); }
+
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
 }
